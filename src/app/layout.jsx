@@ -1,3 +1,4 @@
+import Navbar from "@/components/organisms/Navbar"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "next-themes"
 import { Inter } from "next/font/google"
@@ -18,7 +19,7 @@ const RootLayout = ({ children }) => {
 		>
 			<body
 				className={cn(
-					"flex h-screen w-screen divide-neutral-300 overflow-hidden border-neutral-300 bg-neutral-50 text-slate-900 transition-all duration-500 ease-in-out dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-950 dark:text-slate-200",
+					"flex h-screen w-screen flex-col divide-neutral-300 overflow-hidden border-neutral-300 bg-neutral-50 text-slate-900 transition-all duration-500 ease-in-out dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-950 dark:text-slate-200",
 					inter.className
 				)}
 			>
@@ -28,6 +29,7 @@ const RootLayout = ({ children }) => {
 					enableSystem
 					disableTransitionOnChange
 				>
+					<Navbar />
 					<main className="flex w-full flex-1 flex-col">
 						{children}
 					</main>

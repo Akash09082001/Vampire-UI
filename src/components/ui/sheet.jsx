@@ -1,8 +1,8 @@
 "use client"
-import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva } from "class-variance-authority"
 import { X } from "lucide-react"
+import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -49,7 +49,7 @@ const SheetContent = React.forwardRef(
 			<SheetOverlay />
 			<SheetPrimitive.Content
 				ref={ref}
-				className={cn(sheetVariants({ side }), className)}
+				className={cn(sheetVariants({ side }), className, "p-0")}
 				{...props}
 			>
 				{children}
@@ -66,7 +66,7 @@ SheetContent.displayName = SheetPrimitive.Content.displayName
 const SheetHeader = ({ className, ...props }) => (
 	<div
 		className={cn(
-			"flex flex-col space-y-2 text-center sm:text-left",
+			"flex flex-col space-y-2 border-b p-4 text-center sm:text-left",
 			className
 		)}
 		{...props}
@@ -105,13 +105,13 @@ SheetDescription.displayName = SheetPrimitive.Description.displayName
 
 export {
 	Sheet,
-	SheetPortal,
-	SheetOverlay,
-	SheetTrigger,
 	SheetClose,
 	SheetContent,
-	SheetHeader,
-	SheetFooter,
-	SheetTitle,
 	SheetDescription,
+	SheetFooter,
+	SheetHeader,
+	SheetOverlay,
+	SheetPortal,
+	SheetTitle,
+	SheetTrigger,
 }
